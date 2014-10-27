@@ -36,12 +36,13 @@ client.get('tells', function(e,r) {
 });
 
 bot.addListener('message', function (from, to, message) {
-  if(from in tells) {
+  name = from.toLowerCase();
+  if(name in tells) {
     bot.say(to, "Hey " + from + ", I have messages for you!");
-    tells[from].forEach(function(element, index, array) {
+    tells[name].forEach(function(element, index, array) {
       bot.say(from, element[0] + " says \"" + element[1] + "\"");
     });
-    delete tells[from];
+    delete tells[name];
     client.set('tells', JSON.stringify(tells));
   }
 
@@ -51,12 +52,13 @@ bot.addListener('message', function (from, to, message) {
       //bot.say(to, "Were you talking about me " + from + "?");
     } else if (message[0] == '.') {
       tell = message.split(' ');
+      name = tell[1].toLowerCase();
       if(tell[0] == '.tell'){
-        if (!(tell[1] in tells)){
-          tells[tell[1]] = [];
+        if (!(name in tells)){
+          tells[name] = [];
         }
-        tells[tell[1]].push([from, tell.slice(2).join(' ')]);
-        bot.say(to, "Alright " + from + " I'll tell " + tell[1] + " next time I see them!");
+        tells[name].push([from, tell.slice(2).join(' ')]);
+        bot.say(to, "Alright " + from + " I'll tell " + name + " next time I see them!");
         client.set('tells', JSON.stringify(tells));
       } else {
         command = message.slice(1);
