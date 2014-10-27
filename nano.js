@@ -52,8 +52,8 @@ bot.addListener('message', function (from, to, message) {
       //bot.say(to, "Were you talking about me " + from + "?");
     } else if (message[0] == '.') {
       tell = message.split(' ');
-      name = tell[1].toLowerCase();
-      if(tell[0] == '.tell'){
+      if(tell[0] == '.tell' && tell.length >= 3){
+        name = tell[1].toLowerCase();
         if (!(name in tells)){
           tells[name] = [];
         }
