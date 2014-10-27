@@ -39,7 +39,7 @@ bot.addListener('message', function (from, to, message) {
   if(from in tells) {
     bot.say(to, "Hey " + from + ", I have messages for you!");
     tells[from].forEach(function(element, index, array) {
-      bot.say(to, element[0] + " says \"" + element[1] + "\"");
+      bot.say(from, element[0] + " says \"" + element[1] + "\"");
     });
     delete tells[from];
     client.set('tells', JSON.stringify(tells));
