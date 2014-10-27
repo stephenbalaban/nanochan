@@ -50,7 +50,8 @@ bot.addListener('message', function (from, to, message) {
     console.log(from + ' => ' + to + ': ' + message);
     if(message.indexOf(config.botName) > -1){
       //bot.say(to, "Were you talking about me " + from + "?");
-    } else if (message[0] == '.') {
+    }
+    if (message[0] == '.') {
       tell = message.split(' ');
       if(tell[0] == '.tell' && tell.length >= 3){
         name = tell[1].toLowerCase();
