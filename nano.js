@@ -7,6 +7,23 @@ var https = require("https");
 var sys = require("sys");
 var redis = require("redis");
 
+var modules = [];
+
+// load modules
+config.modules.forEach(function (module) {
+  modules.push(require('./modules/'+module)); 
+});
+
+// connect to IRC
+var bot = new irc.Client(config.server, config.botName, {
+  channels: config.channels
+});
+
+// register modules
+modules.forEach(function (module) {
+  module.register(bot);
+});
+
 tells = {};
 
 var stdin = process.openStdin();
@@ -20,9 +37,6 @@ stdin.addListener("data", function(d) {
 
 youtube.setKey('AIzaSyB70sBWjcC5oG6dZ9AsJcDvUQVDS4bKlQw');
 
-var bot = new irc.Client(config.server, config.botName, {
-  channels: config.channels
-});
 
 lainchan_regex = /(lainchan\.org\/[\w|%]+\/res\/\d+)/;  
 
