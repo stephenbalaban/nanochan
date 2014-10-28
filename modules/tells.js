@@ -2,7 +2,7 @@ var redis = require("redis");
 
 tells = {}
 
-tell_regex = /^\.tell (?!nanochan)([\w|-]+) (.+)/
+tell_regex = /^\.tell (?!nanochan)([\w|-]+) (.+)/i
 
 var client = redis.createClient();
 client.get('tells', function(e,r) {
