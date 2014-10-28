@@ -27,9 +27,6 @@ bot.addListener('message', function (from, to, message) {
     if(message.indexOf(config.botName) > -1){
       //bot.say(to, "Were you talking about me " + from + "?");
     }
-  if (message.toLowerCase() == "hi" || message.toLowerCase() == "hey" || message.toLowerCase() == "hello"){
-      bot.say(to, "Hi " + from + "!");
-    }
   }
 });
 
