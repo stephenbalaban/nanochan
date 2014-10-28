@@ -22,8 +22,12 @@ function threadTeaser(url, callback) {
     });
 
     res.on('end', function() {
-      var lain = JSON.parse(body).posts[0]
-      callback("sub" in lain ? lain.sub : lain.com.slice(0,60));
+      try {
+        var lain = JSON.parse(body).posts[0];
+        callback("sub" in lain ? lain.sub : lain.com.slice(0,60));
+      } catch (e) {
+        console.error("Failed to parse page " + url + ": " + e);
+      }
     });
   })
 }
