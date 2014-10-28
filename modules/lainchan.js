@@ -1,6 +1,6 @@
 var https = require("https");
 
-lainchan_regex = /(lainchan\.org\/[\w|%]+\/res\/\d+)/;
+lainchan_regex = /^(https*:\/\/lainchan\.org\/[\w|%]+\/res\/\d+)/;
 
 function register(bot){
   bot.addListener('message', function(from, to, message){
