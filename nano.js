@@ -1,9 +1,5 @@
 #!/usr/bin/node
-var config = {
-  channels: ["#nanochan","#lainchan"],
-  server: "irc.freenode.net",
-  botName: "nanochan"
-};
+var config = require('./config')
 
 var irc = require("irc");
 var youtube = require("youtube-node");
