@@ -1,11 +1,11 @@
 var https = require("https");
 
-lainchan_regex = /^(https*:\/\/lainchan\.org\/[\w|%]+\/res\/\d+)/;
+lainchan_regex = /(https:\/\/lainchan\.org\/[\w|%]+\/res\/\d+)/;
 
 function register(bot){
   bot.addListener('message', function(from, to, message){
     if ((result = lainchan_regex.exec(message))) {
-      url = 'https://'+result[0]+'.json';
+      url = result[0]+'.json';
       threadTeaser(url, function(teaser){
         bot.say(to, "Thread: " + teaser);
       });
