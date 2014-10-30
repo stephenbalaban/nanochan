@@ -12,7 +12,7 @@ responses =['I love you too, %!',
 exports.register = function(bot) {
   bot.addListener('message', function(from, to, message){
     if(love_regex.exec(message)) {
-      bot.say(to, responses[Math.floor(Math.random()*responses.length)] + from + "!");
+      bot.say(to, responses[Math.floor(Math.random()*responses.length)].replace('%', from));
     }
   });
 }
