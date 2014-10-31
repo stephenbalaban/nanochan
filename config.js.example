@@ -1,0 +1,8 @@
+var config = {
+  channels: ["#nanochan"],
+  server: "irc.freenode.net",
+  botName: "nanochan-examplename",
+  modules: ["lainchan", "errors", "tells", "greet", "love"],
+};
+
+module.exports = config;
