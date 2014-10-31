@@ -13,9 +13,8 @@ function register(bot){
       threadTeaser(url, function(teaser){
         bot.say(to, "Thread: " + teaser);
       });
-    } else if(result && result[3]){ // any other URL
-      url = 'http://' + result[3];
-      linkTeaser(url, function(teaser){
+    } else if(result && result[2]){ // any other URL
+      linkTeaser(result[2], function(teaser){
         bot.say(to, "Link: " + teaser);
       });
     }
