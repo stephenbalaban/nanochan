@@ -2,7 +2,7 @@ var https = require("https");
 var http = require("http");
 var request = require("request");
 
-lainchan_regex = /(https:\/\/lainchan\.org\/[\w|%|\u03BB]+\/res\/\d+)|(https?:\/\/(.+))/;
+lainchan_regex = /(https:\/\/lainchan\.org\/[\w|%|\u03BB]+\/res\/\d+)|(https?:\/\/(\S+))/;
 title_regex = /(<\s*title[^>]*>(.+?)<\s*\/\s*title)>/gi; // >parsing HTML with a regex
 
 function register(bot){
