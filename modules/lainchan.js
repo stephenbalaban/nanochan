@@ -43,6 +43,7 @@ function threadTeaser(url, callback) {
 function linkTeaser(url, callback) {
   request(url, function(err, res, body) {
     try {
+      title_regex.lastIndex = 0; // To fix a bug in the regex engine
       var lain = title_regex.exec(body);
       if(lain){
         callback(lain[2]);
