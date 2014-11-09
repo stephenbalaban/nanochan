@@ -1,0 +1,36 @@
+{
+  "name": "nanochan",
+  "version": "0.1.0",
+  "description": "IRC bot for #lainchan on freenode",
+  "main": "nano.js",
+  "dependencies": {
+    "irc": "^0.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/illuminatedgeek/nanochan"
+  },
+  "keywords": [
+    "IRC",
+    "bot",
+    "for",
+    "#lainchan",
+    "on",
+    "freenode.",
+    "Modular",
+    "fast",
+    "and",
+    "hopefully",
+    "readable"
+  ],
+  "author": "Simon McFarlane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/illuminatedgeek/nanochan/issues"
+  },
+  "homepage": "https://github.com/illuminatedgeek/nanochan"
+}
