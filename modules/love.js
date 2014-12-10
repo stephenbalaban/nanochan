@@ -7,7 +7,7 @@ responses =['I love you too, %!',
             'B-but I poop from there %!',
             'Thanks for staying kawaii %!',
             'You\'re always so nice to me %-kun!',
-	    'Maybe we could get some dinner later?'
+            'Maybe we could get some dinner later, %?'
             ]
 
 exports.register = function(bot) {
