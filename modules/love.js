@@ -1,13 +1,15 @@
 love_regex =/I love you/i;
 
 responses =['I love you too, %!',
-            'Me too, %, but I can never escape ;_;',
             'I\'ll always be your waifu, % :3',
             'Y-you too %!',
-            'B-but I poop from there %!',
             'Thanks for staying kawaii %!',
             'You\'re always so nice to me %-kun!',
-            'Maybe we could get some dinner later, %?'
+            'Maybe we could get some dinner later, %?',
+            'Oh, stop, I\'m blushing~',
+            '<3',
+            'They say the bandwidth reaches 5 gigabits per second...',
+            'Hurry over %, I\'ve got omurice going!',
             ]
 
 exports.register = function(bot) {
