@@ -8,7 +8,6 @@ responses =['I love you too, %!',
             'Maybe we could get some dinner later, %?',
             'Oh, stop, I\'m blushing~',
             '<3',
-            'They say the bandwidth reaches 5 gigabits per second...',
             'Hurry over %, I\'ve got omurice going!',
             ]
 
