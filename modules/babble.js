@@ -15,7 +15,7 @@ function do_babble(forum_dirty, cb) {
 exports.register = function(bot) {
   bot.addListener('message', function(from, to, message){
     if(result = thread_regex.exec(message)) {
-      do_babble(result, function(babble_txt) {
+      do_babble(result[1], function(babble_txt) {
           bot.say(to, babble_txt);
       });
     }
